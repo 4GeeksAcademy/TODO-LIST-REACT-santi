@@ -1,11 +1,96 @@
-/* 
+body {
+    background: #f5f5f5;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+h1 {
+    font-size: 80px;
+    font-weight: 100;
+    color: #140a0a;
+    text-align: center;
+    margin-bottom: 20px;
+}
 
-*/
+.todo-box {
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .15);
+    border: 1px solid #eee;
+    position: relative;
+}
+
+.todo-box::before {
+    content: "";
+    position: absolute;
+    left: 4px;
+    right: 4px;
+    bottom: -5px;
+    height: 100%;
+    background: white;
+    border: 1px solid #eee;
+    z-index: -1;
+}
+
+.todo-box::after {
+    content: "";
+    position: absolute;
+    left: 8px;
+    right: 8px;
+    bottom: -10px;
+    height: 100%;
+    background: white;
+    border: 1px solid #eee;
+    z-index: -2;
+}
+
+.container {
+    width: 600px;
+    margin: 50px auto;
+}
+
+.delete-btn {
+    opacity: 0;
+    cursor: pointer;
+    transition: opacity .2s ease;
+    color: red;
+}
+
+.task-item:hover .delete-btn {
+    opacity: 1;
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    border-bottom: 1px solid #ddd;
+    min-height: 55px;
+    padding: 10px 15px;
+}
+
+ul {
+    width: 500px;
+    margin: auto;
+    list-style: none;
+    padding: 0;
+}
+
+input {
+    background: white;
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+input::placeholder {
+    color: #c9c9c9;
+}
+
+p {
+    color: #999;
+    font-size: 14px;
+    margin: 10px;
+}
